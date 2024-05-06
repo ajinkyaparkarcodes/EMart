@@ -47,7 +47,7 @@ Administrators can manage products in this section. They have the following capa
 ![Product Control](https://github.com/ajinkyaparkarcodes/EMart/assets/168991813/1fb795e0-f8cd-420d-9e84-69f7229b030f)
 
 #### Product Update Page
-  ![Product Update Page](https://github.com/ajinkyaparkarcodes/EMart/assets/168991813/7ed6285f-5dfb-4400-8864-6b2cfa6a5423)
+![Product Update Page](https://github.com/ajinkyaparkarcodes/EMart/assets/168991813/7ed6285f-5dfb-4400-8864-6b2cfa6a5423)
 
 ### User Management
 Administrators can add new users with their respective roles using this section.

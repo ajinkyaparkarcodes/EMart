@@ -1,0 +1,47 @@
+﻿@model List<Category>
+
+
+<div class="container">
+    <div class="row pt4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Category List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="CreateCategory" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Add New Category
+            </a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">Name</th>
+                <th scope="col" class="text-center">Display Order</th>
+                <th class="w-50 text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in Model.OrderBy(x => x.DisplayOrder))
+            {
+                <tr>
+                    <td class ="text-center">@d.CategoryId</td>
+                    <td class="text-center">@d.Name</td>
+                    <td class="text-center">@d.DisplayOrder</td>
+                    <td class="text-center">
+                        <div class="w-50 btn-group">
+                            <a asp-controller="Category" asp-action="EditCategory" asp-route-id="@d.CategoryId" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i>Edit
+                            </a>
+                            <a asp-controller="Category" asp-action="DeleteCategory" asp-route-id="@d.CategoryId" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i>Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

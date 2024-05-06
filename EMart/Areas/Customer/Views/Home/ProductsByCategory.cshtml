@@ -1,0 +1,35 @@
+﻿@model List<Product>
+
+@{
+    // Random number generator
+    var random = new Random();
+}
+
+<div class="container mx-3 my-3">
+    <div class="row mb-3">
+        <div class="col">
+            <div class="p-3 bg-primary text-white rounded">
+                <h4>Browse Products</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        @foreach (var product in Model.OrderBy(x => random.Next()))
+        {
+            <div class="col">
+                <div class="card shadow rounded">
+                    <div class="d-flex justify-content-center">
+                        <a class="d-flex justify-content-center" style="width:50%; height:50%" asp-action="ProductDetails" asp-route-id="@product.Id">
+                            <img class="card-img-top" src="@product.ImageUrl" >
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">@product.Name @product.PackSizeValue@product.PackSizeUnit</h5>
+                        <p class="card-text">Price: ₹@product.ListPrice</p>
+                       <a class="btn btn-primary" asp-action="ProductDetails" asp-route-id="@product.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

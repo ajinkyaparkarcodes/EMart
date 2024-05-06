@@ -1,0 +1,58 @@
+﻿@model List<Product>
+
+
+<div class="container">
+    <div class="row pt4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Product List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="AddProduct" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Add New Product
+            </a>
+        </div>
+    </div>
+    <table id="producttable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">Name</th>
+                <th scope="col" class="text-center">Description</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Pack Size</th>
+                <th class="text-center">Category</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+       @*  dont need tbody anymore as we are using jquery DataTable *@
+         <tbody>
+        @*   @foreach (var d in Model.OrderBy(x => x.Id))
+            {
+                <tr>
+                    <td>@d.Id</td>
+                    <td>@d.Name</td>
+                    <td>@d.Description</td>
+                    <td>@d.ListPrice</td>
+                    <td>@d.PackSizeValue @d.PackSizeUnit</td>
+                    <td>@d.Category.Name</td>
+                    <td>
+                        <div class="w-75 btn-group">
+                            <a asp-controller="Product" asp-action="EditProduct" asp-route-id="@d.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i>Edit
+                            </a>
+                            <a asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@d.Id" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i>Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            } *@
+        </tbody> 
+    </table>
+</div>
+
+@section Scripts{
+	<script src="~/js/product.js"></script>
+}

@@ -13,8 +13,10 @@ Project Login And Register Page
 The homepage consists of two main sections: Shop by Category and Broswe Products
 
 #### Shop by Category
+![Screenshot_2](https://github.com/ajinkyaparkarcodes/EMart/assets/168991813/db2693a1-83af-4c95-8c68-01b2031fee67)
+
 This section redirects users to pages specific to each category, where they can find products related to that category.
-![Uploading Screenshot_2.png…]()
+
  Redirected Page
  ![Screenshot_8](https://github.com/ajinkyaparkarcodes/EMart/assets/168991813/202f2898-0358-4a44-9144-33b4648e2ce6)
 
